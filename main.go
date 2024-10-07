@@ -42,4 +42,5 @@ func main() {
 
 	fmt.Printf("Linear Regression Line: y = %.6fx + %.6f\n", slope, b)
 	fmt.Printf("Pearson Correlation Coefficient: %.10f\n", PCC)
+	
 }
