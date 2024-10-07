@@ -14,10 +14,14 @@ func main() {
 		fmt.Println("The command to run the programm will be: go  run . main.go data.txt")
 		return
 	}
-
-	file, err := os.Open("./data.txt")
+	if os.Args[1] != "data.txt" {
+		fmt.Println("Error: the file containing data is data.txt not", os.Args[1])
+		return
+	}
+	file, err := os.Open("data.txt")
 	if err != nil {
 		fmt.Println("Error: ", err)
+		return
 	}
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
